@@ -12,8 +12,6 @@
                 <input type="text" id="title" name="title"><br>
                 <label for="description">Description : </label><br>
                 <textarea id="description" name="description"></textarea><br><br>
-                <label for="content">Contenu : </label><br>
-                <textarea id="content" name="content"></textarea><br><br>
                 <input type="submit" value="Publier" name="submit">
             </form>
         </div>
