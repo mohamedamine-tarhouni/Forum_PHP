@@ -1,6 +1,6 @@
 <?php
-require("connect.php");
-include("functions.php");
+require("actions/connect.php");
+include("actions/functions.php");
 if (isset($_POST['submit'])) {
     if (!empty($_POST['username']) and !empty($_POST['password']) and !empty($_POST['mail'])) {
         $username = htmlspecialchars($_POST['username']);

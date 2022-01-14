@@ -1,5 +1,5 @@
 <?php
-require('connect.php');
+require('actions/connect.php');
 if (isset($_POST['submit'])) {
     //Verifier si les champs ne sont pas vides
     if (!empty($_POST['username']) and !empty($_POST['password'])) {

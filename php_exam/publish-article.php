@@ -1,5 +1,5 @@
 
-<?php require('actions/Security.php'); ?>
+<?php require('actions/users/Security.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 <?php include 'includes/head.php';?>
@@ -15,7 +15,6 @@
                 <label for="content">Contenu : </label><br>
                 <textarea id="content" name="content"></textarea><br><br>
                 <input type="submit" value="Publier" name="submit">
-                <!-- <a href="register.php"><p>Je n'ai pas de compte je m'inscris </p></a> -->
             </form>
         </div>
     </div>
