@@ -10,11 +10,15 @@
             <?php if (isset($errorMsg)) {
                     echo "<p>".$errorMsg."</p>";
                 } ?>
-                <label for="username">Username/E-Mail:</label><br>
-                <input type="text" id="username" name="username"><br>
-                <label for="password">Password :</label><br>
-                <input type="password" id="pass" name="password"><br><br>
-                <input type="submit" value="Connexion" name="submit">
+                <div class="mb-3">
+                    <label for="username" class="form-label">Nom d'utilisateur/E-mail : </label>
+                    <input type="text" class="form-control" id="username" name="username" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" name="password">
+                </div>
+                <button type="submit" class="btn btn-primary" name="submit">Connexion</button>
                 <a href="register.php"><p>Je n'ai pas de compte je m'inscris </p></a>
             </form>
         </div>
