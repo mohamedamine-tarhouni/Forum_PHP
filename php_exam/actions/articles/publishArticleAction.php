@@ -4,13 +4,11 @@ if (isset($_POST['submit'])){
     if(!empty($_POST['title']) AND !empty($_POST['description'])){
         $article_title=htmlspecialchars($_POST['title']);
         $article_desc=nl2br(htmlspecialchars($_POST['description']));
-        $article_date=date('d/m/Y H:i');
+        $article_date=date('d/m/Y à H:i');
         $article_id_author= $_SESSION['ID_User'];
-        $article_authorname=$_SESSION['Username'];
+        $req_Add_Article = $mysql->prepare('INSERT INTO articles(Title,Description,Date_Pub,ID_User) VALUES(?, ?, ?, ?)');
+        $req_Add_Article->execute(array($article_title, $article_desc, $article_date,$article_id_author));
     }else{
         $errorMsg="Veuillez compléter tous les champs";
     }
 }
-
-
-?>
