@@ -1,4 +1,5 @@
 <?php
+session_start();
 require("actions/connect.php");
 include("actions/functions.php");
 if (isset($_POST['submit'])) {

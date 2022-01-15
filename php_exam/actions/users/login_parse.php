@@ -1,4 +1,5 @@
 <?php
+session_start();
 require('actions/connect.php');
 if (isset($_POST['submit'])) {
     //Verifier si les champs ne sont pas vides

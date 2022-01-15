@@ -1,7 +1,7 @@
 
 <?php 
-require('actions/articles/publishArticleAction.php'); 
 require('actions/users/Security.php');
+require('actions/articles/publishArticleAction.php'); 
 ?>
 <!DOCTYPE html>
 <html lang="en">

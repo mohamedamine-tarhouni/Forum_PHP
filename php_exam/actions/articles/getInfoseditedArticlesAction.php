@@ -11,6 +11,8 @@ if (isset($_GET['id']) and !empty($_GET['id'])) {
             $article_desc=$articleInfos['Description'];
             $article_content=$articleInfos['Content'];
             $article_date=$articleInfos['Date_Pub'];
+            $article_desc=str_replace('<br />', '', $article_desc);
+            $article_content=str_replace('<br />', '', $article_content);
         } else {
             $errorMsg = "Vous n'avez pas le droit pour modifier cet article";
         }
