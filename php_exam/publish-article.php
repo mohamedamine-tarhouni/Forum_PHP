@@ -22,6 +22,10 @@ require('actions/users/Security.php');
                 <label for="description" class="form-label">Description : </label><br>
                 <textarea class="form-control" id="description" name="description"></textarea><br><br>
                 </div>
+                <div class="mb-3">
+                <label for="content" class="form-label">Contenu : </label><br>
+                <textarea class="form-control" id="content" name="content"></textarea><br><br>
+                </div>
                 <!-- <input type="submit" value="Publier" name="submit"> -->
                 <button type="submit" class="btn btn-primary" name="submit">Publier</button>
             </form>
