@@ -1,7 +1,5 @@
-
 <?php 
-require('actions/articles/publishArticleAction.php'); 
-require('actions/users/Security.php');
+require('actions/articles/editArticlesAction.php'); 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,7 +12,7 @@ require('actions/users/Security.php');
             <?php if (isset($errorMsg)) {
                     echo "<p>".$errorMsg."</p>";
                 } ?>
-              <div class="mb-3">
+                <div class="mb-3">
                 <label for="title" class="form-label">Titre : </label><br>
                 <input type="text" class="form-control" id="title" name="title"><br>
                 </div>
@@ -23,11 +21,9 @@ require('actions/users/Security.php');
                 <textarea class="form-control" id="description" name="description"></textarea><br><br>
                 </div>
                 <!-- <input type="submit" value="Publier" name="submit"> -->
-                <button type="submit" class="btn btn-primary" name="submit">Publier</button>
+                <button type="submit" class="btn btn-primary" name="submit">Modifier</button>
             </form>
         </div>
     </div>
 </body>
-
 </html>
-
