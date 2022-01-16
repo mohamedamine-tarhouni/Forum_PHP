@@ -17,7 +17,7 @@ if (isset($_GET['id']) and !empty($_GET['id'])) {
             $errorMsg = "Vous n'avez pas le droit pour modifier cet article";
         }
     } else {
-        $errorMsg = "Cette article n'existe pas ou a été supprimé";
+        $errorMsg = "Cet article n'existe pas ou a été supprimé";
     }
 } else {
     $errorMsg = "Aucune Article n'a été trouvée";
