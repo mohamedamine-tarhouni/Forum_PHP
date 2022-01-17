@@ -12,22 +12,45 @@
                 } ?>
                 <div class="mb-3">
                     <label for="username" class="form-label">Nom d'utilisateur : </label>
-                    <input type="text" class="form-control" id="username" name="username" aria-describedby="emailHelp">
+                    <?php if (!isset($username)) { ?>
+                        <input type="text" class="form-control" id="username" name="username" aria-describedby="emailHelp">
+                    <?php } else { ?>
+                        <input type="text" class="form-control" id="username" name="username" value="<?= $username ?>" aria-describedby="emailHelp">
+                    <?php
+                    } ?>
+
                 </div>
                 <?php if (isset($errorMsg_Username)) {
                     echo "<p>" . $errorMsg_Username . "</p>";
                 } ?>
                 <div class="mb-3">
                     <label for="mail" class="form-label">E-Mail : </label>
-                    <input type="email" class="form-control" id="mail" name="mail" aria-describedby="emailHelp">
+                    <?php if (!isset($mail)) { ?>
+                        <input type="email" class="form-control" id="mail" name="mail" aria-describedby="emailHelp">
+                    <?php } else { ?>
+                        <input type="email" class="form-control" id="mail" name="mail" value="<?= $mail ?>" aria-describedby="emailHelp">
+                    <?php
+                    } ?>
                     <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
                 </div>
                 <?php if (isset($errorMsg_Mail)) {
                     echo "<p>" . $errorMsg_Mail . "</p>";
                 } ?>
                 <div class="mb-3">
-                    <label for="password" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="password" name="password">
+                    <label for="password" class="form-label">Mot de passe : </label>
+                    <?php if (!isset($password_verif)) { ?>
+                        <input type="password" class="form-control" id="password" name="password">
+                    <?php } else { ?>
+                        <input type="password" class="form-control" id="password" name="password" value="<?= $password_verif ?>">
+                    <?php
+                    } ?>
+                </div>
+                <?php if (isset($error_MDP)) {
+                    echo "<p>" . $error_MDP . "</p>";
+                } ?>
+                <div class="mb-3">
+                    <label for="confirm_password" class="form-label">Confirmer le mot de passe : </label>
+                    <input type="password" class="form-control" id="confirm_password" name="confirm_password">
                 </div>
 
                 <button type="submit" class="btn btn-primary" name="submit">S'inscrire</button>
