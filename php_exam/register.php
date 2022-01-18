@@ -8,20 +8,27 @@
         <div class="form_div">
             <form method="POST">
                 <?php if (isset($errorMsg)) {
-                    echo "<p>" . $errorMsg . "</p>";
+                    echo "<font color=red>" . $errorMsg . "</font>";
                 } ?>
                 <div class="mb-3">
                     <label for="username" class="form-label">Nom d'utilisateur : </label>
-                    <?php if (!isset($username)) { ?>
+                    <!-- <?php if (!isset($username)) { ?>
                         <input type="text" class="form-control" id="username" name="username" aria-describedby="emailHelp">
                     <?php } else { ?>
                         <input type="text" class="form-control" id="username" name="username" value="<?= $username ?>" aria-describedby="emailHelp">
                     <?php
-                    } ?>
+                    } ?> -->
+                    
+                        <input type="text" class="form-control" id="username" name="username" value="<?php 
+                        if (isset($username)) { 
+                            echo $username; 
+                            } 
+                            ?>" aria-describedby="emailHelp">
+                
 
                 </div>
                 <?php if (isset($errorMsg_Username)) {
-                    echo "<p>" . $errorMsg_Username . "</p>";
+                    echo "<font color=red>" . $errorMsg_Username . "</font>";
                 } ?>
                 <div class="mb-3">
                     <label for="mail" class="form-label">E-Mail : </label>
@@ -34,7 +41,7 @@
                     <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
                 </div>
                 <?php if (isset($errorMsg_Mail)) {
-                    echo "<p>" . $errorMsg_Mail . "</p>";
+                    echo "<font color=red>" . $errorMsg_Mail . "</font>";
                 } ?>
                 <div class="mb-3">
                     <label for="password" class="form-label">Mot de passe : </label>
@@ -46,7 +53,7 @@
                     } ?>
                 </div>
                 <?php if (isset($error_MDP)) {
-                    echo "<p>" . $error_MDP . "</p>";
+                    echo "<font color=red>" . $error_MDP . "</font>";
                 } ?>
                 <div class="mb-3">
                     <label for="confirm_password" class="form-label">Confirmer le mot de passe : </label>
