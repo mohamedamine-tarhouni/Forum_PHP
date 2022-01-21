@@ -18,7 +18,6 @@
                         <input type="text" class="form-control" id="username" name="username" value="<?= $username ?>" aria-describedby="emailHelp">
                     <?php
                     } ?> -->
-                    
                         <input type="text" class="form-control" id="username" name="username" value="<?php 
                         if (isset($username)) { 
                             echo $username; 
