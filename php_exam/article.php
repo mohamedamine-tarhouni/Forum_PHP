@@ -1,6 +1,9 @@
 <?php 
 require("actions/users/Security.php");
-require('actions/articles/showArticleContentAction.php'); ?>
+require('actions/articles/showArticleContentAction.php'); 
+require('actions/articles/postAnswerAction.php');
+require('actions/articles/showAllAnswersOfArticleAction.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <?php include 'includes/head.php';?>
@@ -23,10 +26,10 @@ require('actions/articles/showArticleContentAction.php'); ?>
         <br>
         <section class="show-answers">
 
-            <form action="form-group" method="POST">
+            <form method="POST">
                 <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Réponse :</label>
-                    <textarea name="answer" class="form-control"></textarea>
+                    <label for="answer" class="form-label">Réponse :</label>
+                    <textarea name="answer" id="answer" class="form-control"></textarea>
                     <br>
                     <button class="btn btn-success" type="submit" name="validate">Répondre</button>
                 </div>
@@ -38,16 +41,16 @@ require('actions/articles/showArticleContentAction.php'); ?>
                     ?>
                     <div class="card">
                         <div class="card-header">
-                            <?= $answer['pseudon']; ?>
+                            <?= $answer['Username']; ?>
 
                         </div>
                         <div class="card-body">
-                            <?= $answer['contenu']; ?>
+                            <?= $answer['Content']; ?>
 
                         </div>
 
                     </div>
-
+                    <br><br>
 
                     <?php
                 }

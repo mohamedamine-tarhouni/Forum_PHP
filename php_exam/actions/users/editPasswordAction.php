@@ -24,7 +24,7 @@ if (isset($_POST['submit'])) {
                     $error_MDP = final_Verification($verif_new_password, "nouveau mot de passe", 8, 25);
                 }
             }else{
-                $error_MDP = "Si tu veux pas changer le mot de passe tel qu'elle est, pourquoi t'es la?";
+                $error_MDP = "Le nouveau mot de passe ne peut pas être similaire à l'ancien";
             }
         } else {
             $error_MDP = "Veuillez verifier que l'ancien mot de passe est correcte";
