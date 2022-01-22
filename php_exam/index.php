@@ -35,15 +35,13 @@ require('actions/articles/showAllArticlesAction.php');?>
                     <a href="article.php?id=<?= $article['ID_Article'];?>">
                     <?= $article['Title']; ?>
                     </a>
-                    <a href="edit-article.php?id=<?= $article['ID_Article'];?>" class="btn btn-warning"> Modifier</a>
-                    <a href=actions/articles/deleteArticleAction.php?id=<?= $article['ID_Article'];?>" class="btn btn-danger"> Supprimer</a>
                     <p></p>
                 </div>
                 <div class="card-body">
                     <?= $article['Description']; ?>
                 </div>
                 <div class="card-footer">
-                    Publié par <?= $article['Username']; ?> le <?= $article['Date_Pub']; ?>
+                    Publié par <a href ="profile.php?id=<?= $article['ID_User']?>" ><?= $article['Username']; ?></a> le <?= $article['Date_Pub']; ?>
                 </div>
             </div>
             <br>

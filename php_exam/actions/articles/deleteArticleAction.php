@@ -14,7 +14,7 @@ if (isset($_GET['id']) and !empty($_GET['id'])) {
             $deleteArticle = $mysql->prepare("DELETE FROM articles WHERE ID_Article=?");
             $deleteArticle->execute(array($idOfArticles));
             echo "Article supprimé";
-            header('Location: ../../index.php');
+            header('Location: ../../profile.php?id='.$articleInfos['ID_User']);
         } else {
             echo "Vous n'avez pas le droit pour modifier cet article";
             // $errorMsg = "Vous n'avez pas le droit pour modifier cet article";
