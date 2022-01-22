@@ -1,7 +1,6 @@
 <?php
-// session_start();
 require('actions/users/Security.php'); 
-require('actions/articles/showAllArticlesAction.php');?>
+require('actions/articles/myArticlesAction.php');?>
 <!DOCTYPE html>
 <html lang="en">
 <?php include 'includes/head.php'; ?>
@@ -29,15 +28,11 @@ require('actions/articles/showAllArticlesAction.php');?>
         </form>
         <br>
         <?php
-        while ($article = $getAllArticles->fetch()) {
+        while ($article = $getAllMyArticles->fetch()) {
         ?>
             <div class="card">
                 <div class="card-header">
-                    <a href="article.php?id=<?= $article['ID_Article'];?>">
                     <?= $article['Title']; ?>
-                    </a>
-                    <a href="edit-article.php?id=<?= $article['ID_Article'];?>" class="btn btn-warning"> Modifier</a>
-                    <a href=actions/articles/deleteArticleAction.php?id=<?= $article['ID_Article'];?>" class="btn btn-danger"> Supprimer</a>
                     <p></p>
                 </div>
                 <div class="card-body">
@@ -50,6 +45,7 @@ require('actions/articles/showAllArticlesAction.php');?>
             <br>
         <?php
         }
+
         ?>
 
 
