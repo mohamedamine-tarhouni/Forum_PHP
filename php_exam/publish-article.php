@@ -1,4 +1,3 @@
-
 <?php 
 require('actions/users/Security.php');
 require('actions/articles/publishArticleAction.php'); 

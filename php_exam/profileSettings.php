@@ -31,7 +31,7 @@ require('actions/users/editUserInfo.php')?>
                     echo "<font color=red>" . $errorMsg_Mail . "</font>";
                 } ?>
                 <button type="submit" class="btn btn-primary" name="submit">Modifier</button>
-              <a href="index.php" class="btn btn-warning"> Modifier mot de passe</a>
+              <a href="edit-Password.php?id=<?= $idOfusers;?>" class="btn btn-dark"> Modifier mot de passe</a>
                 <?php } ?>
             </form>
         </div>

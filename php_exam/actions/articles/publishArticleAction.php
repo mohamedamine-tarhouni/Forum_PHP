@@ -9,6 +9,7 @@ if (isset($_POST['submit'])){
         $article_id_author= $_SESSION['ID_User'];
         $req_Add_Article = $mysql->prepare('INSERT INTO articles(Title,Description,Date_Pub,ID_User,Content) VALUES(?, ?, ?, ?, ?)');
         $req_Add_Article->execute(array($article_title, $article_desc, $article_date,$article_id_author,$article_content));
+        header('Location:index.php');
     }else{
         $errorMsg="Veuillez compléter tous les champs";
     }

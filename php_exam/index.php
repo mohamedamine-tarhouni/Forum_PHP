@@ -17,7 +17,6 @@ require('actions/articles/showAllArticlesAction.php');?>
         <button type="submit">Valider</button> -->
 
             <div class="form-group row">
-
                 <div class="col-8">
                     <input type="search" name="search" class="form-control mr-sm-2" placeholder="Search" aria-label="Search">
                 </div>

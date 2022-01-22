@@ -1,5 +1,5 @@
-<?php 
-$idUser=$_SESSION['ID_User']; 
+<?php
+$idUser = $_SESSION['ID_User'];
 ?>
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <div class="container-fluid">
@@ -10,7 +10,7 @@ $idUser=$_SESSION['ID_User'];
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link"  href="index.php">Les articles</a>
+          <a class="nav-link" href="index.php">Les articles</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="publish-article.php">Publier un article</a>
@@ -18,12 +18,13 @@ $idUser=$_SESSION['ID_User'];
       </ul>
       <form class="d-flex">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link" href="actions/users/logoutAction.php">Deconnexion</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="ProfileSettings.php?id=<?=$idUser?>">Account</a>
-        </li>
+          <li class="nav-item">
+            <a class="btn btn-danger " href="actions/users/logoutAction.php">Deconnexion</a>
+          </li>
+          <p></p>
+          <li class="nav-item">
+            <a class=" btn btn-dark " href="ProfileSettings.php?id=<?= $idUser ?>">Account</a>
+          </li>
         </ul>
       </form>
     </div>
