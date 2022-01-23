@@ -6,7 +6,7 @@ if (isset($_GET['id']) and !empty($_GET['id'])) {
     $req_user_Exist->execute(array($idOfusers));
     if ($req_user_Exist->rowCount() > 0) {
         $userInfos = $req_user_Exist->fetch();
-        if ($userInfos['ID_User'] == $_SESSION['ID_User']) {
+        if (isset($_SESSION['authAdmin']) or $userInfos['ID_User'] == $_SESSION['ID_User']) {
             $user_name=$userInfos['Username'];
             $user_mail=$userInfos['Mail'];
         } else {

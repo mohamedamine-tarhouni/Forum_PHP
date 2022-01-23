@@ -21,7 +21,6 @@ require('actions/articles/showAllAnswersOfArticleAction.php');
             <p><?= $article_Content; ?></p>
             <hr>
             <small>Publié par <?= $article_Author. ' le ' . $article_Date_Pub; ?></small>
-
         </section>
         <br>
         <section class="show-answers">

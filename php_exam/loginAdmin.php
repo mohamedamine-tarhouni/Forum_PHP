@@ -1,8 +1,9 @@
-<?php require('actions/users/login_parse.php'); ?>
+<?php require('actions/admin/adminLoginAction.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 <?php include 'includes/head.php';?>
 <body>
+  <center>  <h1>@ADMIN PANEL</h1></center>
     <div class="container">
         <div class="form_div">
             <form  method="POST">
@@ -26,7 +27,6 @@
                             ?>">
                 </div>
                 <button type="submit" class="btn btn-primary" name="submit">Connexion</button>
-                <a href="register.php"><p>Je n'ai pas de compte je m'inscris </p></a>
             </form>
         </div>
     </div>

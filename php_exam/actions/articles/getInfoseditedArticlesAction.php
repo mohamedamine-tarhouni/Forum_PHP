@@ -6,7 +6,7 @@ if (isset($_GET['id']) and !empty($_GET['id'])) {
     $req_Article_Exist->execute(array($idOfArticles));
     if ($req_Article_Exist->rowCount() > 0) {
         $articleInfos = $req_Article_Exist->fetch();
-        if ($articleInfos['ID_User'] == $_SESSION['ID_User']) {
+        if (isset($_SESSION['authAdmin']) or $articleInfos['ID_User'] == $_SESSION['ID_User']  ) {
             $article_title=$articleInfos['Title'];
             $article_desc=$articleInfos['Description'];
             $article_content=$articleInfos['Content'];

@@ -15,6 +15,7 @@ require('actions/users/editPasswordAction.php')
                     echo "<font color=red>" . $error_MDP . "</font>";
                 } ?>
             <form method="POST">
+            <?php if (!isset($_SESSION['authAdmin'])){?>
             <div class="mb-3">
                     <label for="password" class="form-label">Votre mot de passe : </label>
                         <input type="password" class="form-control" id="password" name="password" value="<?php 
@@ -23,6 +24,7 @@ require('actions/users/editPasswordAction.php')
                             } 
                             ?>">
                 </div>
+                <?php } ?>
             <div class="mb-3">
                     <label for="new_password" class="form-label">Nouveau mot de passe : </label>
                         <input type="password" class="form-control" id="new_password" name="new_password" value="<?php 
