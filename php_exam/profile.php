@@ -35,9 +35,9 @@ require('actions/users/showOneUsersProfile.php');
                     <div class="card-body">
                         <?= $article['Description']; ?>
                         <br><br>
-                        <?php if (!isset($_SESSION['authAdmin'])and$usersInfos['ID_User']==$_SESSION['ID_User']){?>
-                        <a href="edit-article.php?id=<?= $article['ID_Article']; ?>" class="btn btn-warning"> Modifier</a>
-                        <a href=actions/articles/deleteArticleAction.php?id=<?= $article['ID_Article']; ?>" class="btn btn-danger"> Supprimer</a>
+                        <?php if (!isset($_SESSION['authAdmin']) and $usersInfos['ID_User'] == $_SESSION['ID_User']) { ?>
+                            <a href="edit-article.php?id=<?= $article['ID_Article']; ?>" class="btn btn-warning"> Modifier</a>
+                            <a href=actions/articles/deleteArticleAction.php?id=<?= $article['ID_Article']; ?>" class="btn btn-danger"> Supprimer</a>
                         <?php } ?>
                     </div>
                     <div class="card-footer">

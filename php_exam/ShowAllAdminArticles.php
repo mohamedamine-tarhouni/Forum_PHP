@@ -1,7 +1,7 @@
 <?php
 // // session_start();
-// require('actions/users/Security.php'); 
-require('actions/articles/showAllArticlesAction.php');?>
+require('actions/users/Security.php');
+require('actions/articles/showAllArticlesAction.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 <?php include 'includes/head.php'; ?>
@@ -28,18 +28,20 @@ require('actions/articles/showAllArticlesAction.php');?>
         ?>
             <div class="card">
                 <div class="card-header">
-                    <a href="article.php?id=<?= $article['ID_Article'];?>">
-                    <?= $article['Title']; ?>
+                    <a href="article.php?id=<?= $article['ID_Article']; ?>">
+                        <?= $article['Title']; ?>
                     </a>
                     <p></p>
                 </div>
                 <div class="card-body">
                     <?= $article['Description']; ?>
-                    <a href="edit-article.php?id=<?= $article['ID_Article']; ?>" class="btn btn-warning"> Modifier</a>
+                    <?php if (isset($_SESSION['authAdmin'])) { ?>
+                        <a href="edit-article.php?id=<?= $article['ID_Article']; ?>" class="btn btn-warning"> Modifier</a>
                         <a href=actions/articles/deleteArticleAction.php?id=<?= $article['ID_Article']; ?>" class="btn btn-danger"> Supprimer</a>
+                    <?php } ?>
                 </div>
                 <div class="card-footer">
-                    Publié par <a href ="profile.php?id=<?= $article['ID_User']?>" ><?= $article['Username']; ?></a> le <?= $article['Date_Pub']; ?>
+                    Publié par <a href="profile.php?id=<?= $article['ID_User'] ?>"><?= $article['Username']; ?></a> le <?= $article['Date_Pub']; ?>
                 </div>
             </div>
             <br>

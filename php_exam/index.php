@@ -39,10 +39,10 @@ require('actions/articles/showAllArticlesAction.php'); ?>
                 </div>
                 <div class="card-body">
                     <?= $article['Description']; ?>
-                    <?php if (isset($_SESSION['authAdmin'])){?>
+                    <?php if (isset($_SESSION['authAdmin'])) { ?>
                         <br><br>
-                    <a href="edit-article.php?id=<?= $article['ID_Article']; ?>" class="btn btn-warning"> Modifier</a>
-                    <a href=actions/articles/deleteArticleAction.php?id=<?= $article['ID_Article']; ?>" class="btn btn-danger"> Supprimer</a>
+                        <a href="edit-article.php?id=<?= $article['ID_Article']; ?>" class="btn btn-warning"> Modifier</a>
+                        <a href=actions/articles/deleteArticleAction.php?id=<?= $article['ID_Article']; ?>" class="btn btn-danger"> Supprimer</a>
                     <?php } ?>
                 </div>
                 <div class="card-footer">

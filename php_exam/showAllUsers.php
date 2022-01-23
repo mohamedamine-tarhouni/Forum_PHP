@@ -23,9 +23,9 @@ require('actions/admin/showAllUsersAction.php'); ?>
                     <p></p>
                 </div>
                 <div class="card-body">
-                    <?php if (isset($_SESSION['authAdmin'])){?>
-                    <a href="profileSettings.php?id=<?= $user['ID_User']; ?>" class="btn btn-warning"> Modifier</a>
-                    <a href="actions/admin/deleteUserAction.php?id=<?= $user['ID_User']; ?>" class="btn btn-danger"> Supprimer</a>
+                    <?php if (isset($_SESSION['authAdmin'])) { ?>
+                        <a href="profileSettings.php?id=<?= $user['ID_User']; ?>" class="btn btn-warning"> Modifier</a>
+                        <a href="actions/admin/deleteUserAction.php?id=<?= $user['ID_User']; ?>" class="btn btn-danger"> Supprimer</a>
                     <?php } ?>
                 </div>
             </div>

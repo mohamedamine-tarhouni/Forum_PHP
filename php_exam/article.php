@@ -24,7 +24,7 @@ require('actions/articles/showAllAnswersOfArticleAction.php');
         </section>
         <br>
         <section class="show-answers">
-
+        <?php if (!isset($_SESSION['authAdmin'])){?>
             <form method="POST">
                 <div class="mb-3">
                     <label for="answer" class="form-label">Réponse :</label>
@@ -34,6 +34,7 @@ require('actions/articles/showAllAnswersOfArticleAction.php');
                 </div>
                 
             </form>
+            <?php } ?>
 
             <?php
                 while($answer = $getAllAnswersOfThisArticle->fetch()){
