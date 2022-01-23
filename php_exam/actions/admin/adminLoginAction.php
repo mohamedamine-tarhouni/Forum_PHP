@@ -14,7 +14,6 @@ if (isset($_POST['submit'])) {
         if ($req_User_Exists->rowCount() > 0) {
             $userInfos = $req_User_Exists->fetch();
             if (password_verify($password, $userInfos['MDP_Admin'])) {
-
                 //authentification de l'utilisateur
                 $_SESSION['authAdmin'] = true;
                 $_SESSION['ID_Admin'] = $userInfos['ID_User'];
