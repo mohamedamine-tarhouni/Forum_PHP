@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : sam. 22 jan. 2022 à 21:55
+-- Généré le : dim. 23 jan. 2022 à 01:37
 -- Version du serveur : 10.4.22-MariaDB
 -- Version de PHP : 8.1.1
 
@@ -20,6 +20,27 @@ SET time_zone = "+00:00";
 --
 -- Base de données : `php_exam_db`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `admin_users`
+--
+
+CREATE TABLE `admin_users` (
+  `ID_Admin` int(11) NOT NULL,
+  `name_Admin` varchar(50) NOT NULL,
+  `mail_Admin` varchar(70) NOT NULL,
+  `MDP_Admin` varchar(150) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Déchargement des données de la table `admin_users`
+--
+
+INSERT INTO `admin_users` (`ID_Admin`, `name_Admin`, `mail_Admin`, `MDP_Admin`) VALUES
+(1, 'ADMIN', 'ADMIN@a', '$2y$10$PfVAUmy8MZAWsjA3ao4pmuDX9G2RVH0zkQencEFpABNtOadQLGfgS'),
+(2, 'ADMIN', 'ADMIN@a', '$2y$10$Q2SgWu6tULCixcVyREZlCOtrhNhLbL2ZijMVs0oqUR9kkvuxi5Pkq');
 
 -- --------------------------------------------------------
 
@@ -50,16 +71,6 @@ CREATE TABLE `articles` (
   `ID_User` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Déchargement des données de la table `articles`
---
-
-INSERT INTO `articles` (`ID_Article`, `Title`, `Description`, `Content`, `Date_Pub`, `ID_User`) VALUES
-(6, 'fr', 'sdf', '', '15/01/2022 à 00:19', 3),
-(7, 'rrrrrrr', 'qsdf', '', '15/01/2022 à 20:25', 3),
-(8, 'edede', 'dededed', 'dedede', '15/01/2022 à 23:14', 3),
-(15, 'mlk', 'kij<br />\r\nsazs<br />\r\nsz', 'lkjk', '17/01/2022 à 22:26', 10);
-
 -- --------------------------------------------------------
 
 --
@@ -74,29 +85,14 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Déchargement des données de la table `users`
---
-
-INSERT INTO `users` (`ID_User`, `Username`, `MDP`, `Mail`) VALUES
-(1, 'Nadia', '$2y$10$3wFQwNOhfYAKbx7RvK.ae.4iZliieWcqBfDyLmDnq9hRBWSvDix96', 'Nadia@n'),
-(2, 'anthony01', '$2y$10$90wqZ90TkWkQ98sRffrDKeC.rLyJitv74Pl/tSsOyleGp.CVPGxOu', 'antho@michelle'),
-(3, 'azerty', '$2y$10$603C/.7hQOBhqfAn0SlOF.SKQ7GgsAYN6r6D2HxgZjqJh0f/9ulGG', 'ddd@g'),
-(4, 'amine', '$2y$10$PshFa/99hM/8sAWSOvPpH.t494ZXZ.c.hK44.0MeT08Bvp4aeX4q.', 'amine@a'),
-(5, 'a', '$2y$10$O6jKeB8yhYmKhnOX/O9nEeINq9Lq/rzmlMdXaaTpOrQl3v2dg1I.6', 'az@f'),
-(6, 'dd', '$2y$10$54Ar9MTVil4wboXeDsN7yugXUhQ33NOEwp6fJ3kruYkdCwnM.51h6', 'dd@d'),
-(7, 'azerty1', '$2y$10$FP29tRw8.1Sa1IkUt/A0U.fEFO0mc3vaYow8nCaBbg1A1ms0mzbta', 'az@s'),
-(8, 'azerty4', '$2y$10$wTILF1xg.Fv1WmWwiWEl0O7kWA8qJVgkn4b5jyUgXpqTggWhAnsei', 'ml@e'),
-(9, 'azerty7', '$2y$10$V3QR3ZIWsLXB0UynzkK69uArCgGlIcY9pwbvVirf8igxEwv9B27Km', 'ml@a'),
-(10, 'jgjg', '$2y$10$hIq3WuJZPzcegcMjZf9jWuY/Z3fnl0aucnYa7ZPsHZbQ0crZcSF/q', 'ml@s'),
-(11, 'bh', '$2y$10$6cUsjVT6hyXsT9v/03/PGeYNkegSY4QqxkiXfncyZRkSaUBnh/F.q', 'az@m'),
-(12, 'antho', '$2y$10$X9sT/r7a4.9MdX9JzGkJEe2Z/W.4l.OOgUlfnOiJeaQ1YQjI7osPy', 'antho@gmail'),
-(13, 'ammm', '$2y$10$f43rB9HjnsXAruJNZLp/ae3lHGNMpeS1IbWTA121BGgoNVarMPfii', 'ze@f'),
-(14, 'Alex49', '$2y$10$QQAJz.hDWT3pRpXHyoOxfOq/gCYYrQ/4B9qzUiRupHIc/0rxgW3c6', 'Alex@mlk'),
-(15, 'Alex', '$2y$10$TVfIbSCqNSbTI1etAAoif.rVmhG1T1c9kMT5niJ50PepTpOwGC5E.', 'coach@demerde');
-
---
 -- Index pour les tables déchargées
 --
+
+--
+-- Index pour la table `admin_users`
+--
+ALTER TABLE `admin_users`
+  ADD PRIMARY KEY (`ID_Admin`);
 
 --
 -- Index pour la table `answers`
@@ -124,22 +120,28 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT pour la table `admin_users`
+--
+ALTER TABLE `admin_users`
+  MODIFY `ID_Admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT pour la table `answers`
 --
 ALTER TABLE `answers`
-  MODIFY `ID_Answer` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID_Answer` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT pour la table `articles`
 --
 ALTER TABLE `articles`
-  MODIFY `ID_Article` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `ID_Article` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `ID_User` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `ID_User` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- Contraintes pour les tables déchargées
